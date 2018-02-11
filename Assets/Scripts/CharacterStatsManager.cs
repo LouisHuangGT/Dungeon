@@ -16,7 +16,7 @@ public class CharacterStatsManager : MonoBehaviour {
         characterStats = GetComponent<CharacterStats>();
         
         stats[0] = new Stat("Health", 50, 0, 100);
-        stats[1] = new Stat("Mana", 100, 0, 100);
+        stats[1] = new Stat("Mana", 10, 0, 100);
         stats[2] = new Stat("Attack", 10, 0, 200);
         stats[3] = new Stat("Defense", 10, 0, 200);
 
@@ -29,6 +29,7 @@ public class CharacterStatsManager : MonoBehaviour {
         if (stats[0].amount <= stats[0].minAmount)
         {
             GetComponent<Animator>().SetBool("isDead",true);
+            GetComponent<NavMeshAgent>().speed = 0;
             //GetComponent<NavMeshAgent>().enabled = false;
         }
     }

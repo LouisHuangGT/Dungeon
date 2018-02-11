@@ -27,11 +27,14 @@ public class PlayerMovement : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                Point = hit.point;
-            }
-            anim.SetFloat("Speed", Vector3.Magnitude(agent.velocity)/maxSpeed);
-            anim.SetBool("isMoving", true);
-            agent.SetDestination(Point);
+                if (hit.collider.gameObject.layer == 10)
+                {
+                    Point = hit.point;
+                    agent.SetDestination(Point);
+                    anim.SetFloat("Speed", Vector3.Magnitude(agent.velocity) / maxSpeed);
+                    anim.SetBool("isMoving", true);
+                }
+                }
         }
         
         if (agent.remainingDistance <= agent.stoppingDistance)

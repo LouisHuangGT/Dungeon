@@ -296,9 +296,13 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\CharacterStatsManager.cs" />
+    <Compile Include="Assets\Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\SkillManager.cs" />
+    <Compile Include="Assets\Scripts\Skills\ChasingProjectile.cs" />
+    <Compile Include="Assets\Scripts\Skills\Fireball.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
   </ItemGroup>
   <ItemGroup>

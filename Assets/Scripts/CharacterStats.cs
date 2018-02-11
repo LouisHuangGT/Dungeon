@@ -45,7 +45,7 @@ public class CharacterStats : MonoBehaviour
         }
     }
     //Damage 和 Restore方法是不可恢复的加减，例如伤害和恢复生命
-    public void Damage(int amount, string target)
+    public void Damage(int amount,string target)
     {
         foreach (Stat stat in stats)
         {

@@ -11,7 +11,8 @@ public class EnemyMovement : MonoBehaviour {
     float Speed = 1f;
 
     public float attackDistance = 8f;
-    
+
+    EnemyAttack ea;
     NavMeshAgent agent;
     Animator anim;
     GameObject player;
@@ -22,6 +23,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        ea = GetComponent<EnemyAttack>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -41,29 +43,7 @@ public class EnemyMovement : MonoBehaviour {
             agent.isStopped = true;
         }
         if (Vector3.Distance(transform.position, player.transform.position) < attackDistance)
-            Attack();
+            ea.Attack();
     }
-    void Attack()
-    {
-        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        if (stateInfo.fullPathHash == Animator.StringToHash("Base Layer.idle") && !anim.IsInTransition(0))
-        {
-            anim.SetInteger("AttackAnim", Random.Range(1,4));
-            anim.SetTrigger("Attack");
-        }
-    }
-    void PlayerDamagedCallBack()
-    {
-        player.GetComponent<CharacterStats>().Damage(GetComponent<CharacterStats>().findStatByName("Attack").amount,"Health");
-        player.GetComponent<CharacterStats>().findStatByName("Health").print();
-
-
-        player.GetComponent<Animator>().SetTrigger("isDamaged");
-    }
-    void StopAttack()
-    {
-
-        anim.SetTrigger("StopAttack");
-        anim.ResetTrigger("Attack");
-    }
+    
 }
