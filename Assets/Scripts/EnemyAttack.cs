@@ -26,7 +26,7 @@ public class EnemyAttack : MonoBehaviour {
         player.GetComponent<CharacterStats>().findStatByName("Health").print();
 
 
-        player.GetComponent<Animator>().SetTrigger("isDamaged");
+        player.GetComponent<Animator>().SetBool("isDamaged",true);
     }
     public void StopAttack()
     {

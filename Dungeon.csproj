@@ -291,6 +291,7 @@
     <Compile Include="Assets\LowpolyDungeonModularSystem\prefabs\Player\LockCursor.cs" />
     <Compile Include="Assets\LowpolyDungeonModularSystem\prefabs\Player\MouseLook.cs" />
     <Compile Include="Assets\LowpolyDungeonModularSystem\prefabs\Player\ShadowBlob.cs" />
+    <Compile Include="Assets\Scripts\AnimationEventHandler.cs" />
     <Compile Include="Assets\Scripts\BaseSkill.cs" />
     <Compile Include="Assets\Scripts\BonusStat.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />

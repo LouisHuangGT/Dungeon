@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class ChasingProjectile : MonoBehaviour {
 
+    public float existingTime;
+
     public float speed;
     public GameObject Player;
     public float Timer;
@@ -14,11 +16,14 @@ public class ChasingProjectile : MonoBehaviour {
     public GameObject target;
 	// Use this for initialization
 	void Start () {
+        Timer = Time.time;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         transform.position = Vector3.MoveTowards(transform.position,target.transform.position, speed * Time.deltaTime);
+        if (Time.time - Timer > existingTime)
+            Destroy(this.gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
